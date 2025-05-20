@@ -26,7 +26,8 @@ To prevent overwhelming your network or system, the tool uses a **semaphore** to
 
 Just clone this repo — no installation or pip requirements:
 
-bash
+Command:
+
 git clone https://github.com/yourusername/asyncio-port-scanner.git
 cd asyncio-port-scanner
 
