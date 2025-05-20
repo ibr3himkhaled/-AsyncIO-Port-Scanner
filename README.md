@@ -13,13 +13,15 @@
 
 🧠 How It Works
 
-The scanner uses Python’s `asyncio` to open TCP connections to a target host across a specified port range. Ports that respond within the timeout are marked as **open**, while others are considered **closed** or **filtered**.
+The tool uses Python’s asyncio to launch multiple simultaneous connection attempts to the target host’s TCP ports within the specified range. It applies a semaphore to limit concurrent scans to a safe number (default 100) to avoid overwhelming system resources or the target network.
 
-To prevent overwhelming your network or system, the tool uses a **semaphore** to limit the number of concurrent tasks (default: 100).
+Each connection attempt has a configurable timeout. If the connection succeeds, the port is marked open; if it times out or is refused, it is considered closed or filtered.
+
+The asynchronous approach ensures fast scanning speeds compared to sequential scans.
 
 📦 Requirements
 
-- Python 3.7+**
+- Python 3.7+
 - No third-party libraries needed (standard library only)
 
 📥 Installation
